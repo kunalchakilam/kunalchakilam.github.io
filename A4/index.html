@@ -4,16 +4,20 @@
     <title>Add Numbers</title>
     <script>
         function addNumbers() {
-            var a = document.getElementById("num1").value;
-            var b = document.getElementById("num2").value;
-            var sum = Number(a) + Number(b);
+            var a = Number(num1.value);
+            var b = Number(num2.value);
+            var sum = a + b;
             alert("Sum = " + sum);
+            // dvResult.innerHTML = a + b;
         }
     </script>
 </head>
 <body>
+    <h1>Addition of 2 Numbers</h1>
     <input type="text" id="num1">
     <input type="text" id="num2">
     <button onclick="addNumbers()" style="background-color: gold;">Add</button>
+    <hr>
+    <!-- <div></div> -->
 </body>
 </html>
