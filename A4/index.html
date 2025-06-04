@@ -1,27 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Two Numbers</title>
+    <title>Add Numbers</title>
     <script>
         function addNumbers() {
-            var num1 = parseFloat(document.getElementById("txtNum1").value);
-            var num2 = parseFloat(document.getElementById("txtNum2").value);
-           
-            if (!isNaN(num1) && !isNaN(num2)) {
-                var sum = num1 + num2;
-                alert("The sum is: " + sum);
-            } else {
-                alert("Please enter valid numbers in both fields.");
-            }
+            var a = document.getElementById("num1").value;
+            var b = document.getElementById("num2").value;
+            var sum = Number(a) + Number(b);
+            alert("Sum = " + sum);
         }
     </script>
 </head>
 <body>
-    <h1>Addition</h1>
-    <input type="text" id="txtNum1" placeholder="Enter first number">
-    <input type="text" id="txtNum2" placeholder="Enter second number">
+    <input type="text" id="num1">
+    <input type="text" id="num2">
     <button onclick="addNumbers()" style="background-color: gold;">Add</button>
 </body>
 </html>
