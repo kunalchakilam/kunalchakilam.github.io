@@ -1,22 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A3</title>
-</head>
-<body>
-    <h1>Loops</h1>
+    <title>Add Numbers</title>
     <script>
-        // let i =1
-        // while (i<10) {
-        //     document.write(i)
-        //     i++
-        // }
-
-        for (let j=0;j<10;j++) {
-            document.write(j);
+        function addNumbers() {
+            var a = Number(num1.value);
+            var b = Number(num2.value);
+            var sum = a + b;
+            alert("Sum = " + sum);
+            // dvResult.innerHTML = a + b;
         }
     </script>
+</head>
+<body>
+    <h1>Addition of 2 Numbers</h1>
+    <input type="text" id="num1">
+    <input type="text" id="num2">
+    <button onclick="addNumbers()" style="background-color: gold;">Add</button>
+    <hr>
+    <!-- <div></div> -->
 </body>
 </html>

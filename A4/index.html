@@ -1,23 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Add Numbers</title>
+    <title>Calculator</title>
     <script>
-        function addNumbers() {
+        function calculate() {
             var a = Number(num1.value);
             var b = Number(num2.value);
-            var sum = a + b;
-            alert("Sum = " + sum);
-            // dvResult.innerHTML = a + b;
+
+            var addition = a + " + " + b + " = " + (a + b);
+            var subtraction = a + " - " + b + " = " + (a - b);
+            var multiplication = a + " × " + b + " = " + (a * b);
+            var division = b !== 0 ? (a + " ÷ " + b + " = " + (a / b)) : "Division by zero is not allowed.";
+
+            document.getElementById("results").innerHTML =
+                "<p>" + addition + "</p>" +
+                "<p>" + subtraction + "</p>" +
+                "<p>" + multiplication + "</p>" +
+                "<p>" + division + "</p>";
         }
     </script>
 </head>
 <body>
-    <h1>Addition of 2 Numbers</h1>
-    <input type="text" id="num1">
-    <input type="text" id="num2">
-    <button onclick="addNumbers()" style="background-color: gold;">Add</button>
+    <h1>Basic Calculator</h1>
+    <input type="text" id="num1" placeholder="Enter first number">
+    <input type="text" id="num2" placeholder="Enter second number">
+    <button onclick="calculate()" style="background-color: gold;">Calculate</button>
     <hr>
-    <!-- <div></div> -->
+    <div id="results"></div>
 </body>
 </html>
