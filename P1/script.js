@@ -3,11 +3,11 @@ const showLogin = () => {
     <h1>Login Form</h1>
     <p>Email Id:<input type="text" placeholder="Enter Email Id" id="txtEmail"></p>
     <p>Password:<input type="password" placeholder="Enter Password" id="textPass"></p>
-    <p><button>Log In</button></p>
+    <p><button onclick="home()">Log In</button></p>
     <p><button onclick='showRegister()'>Create New Account</button></p>
-    `
-    root.innerHTML = str
-}
+    `;
+    root.innerHTML = str;
+};
 
 const showRegister = () => {
     let str = `
@@ -17,6 +17,10 @@ const showRegister = () => {
     <p>Password:<input type="password" placeholder="Enter Password" id="textPass"></p>
     <p><button>Sign Up</button></p>
     <p><button onclick='showLogin()'>Already have an Account? Log In</button></p>
-    `
-    root.innerHTML = str
-}
+    `;
+    root.innerHTML = str;
+};
+
+const home = () => {
+    root.innerHTML = `<h1>Welcome!</h1>`;
+};
