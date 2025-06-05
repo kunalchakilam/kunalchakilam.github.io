@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Form</title>
+    <script>
+        function showData() {
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+
+            document.getElementById("output").innerHTML =
+                "Name: " + name + ", Email: " + email + ", Password: " + password;
+
+            return false;
+        }
+    </script>
+</head>
+<body>
+    <h1>Simple Form</h1>
+    <form onsubmit="return showData()">
+        Name: <input type="text" id="name"><br><br>
+        Email: <input type="email" id="email"><br><br>
+        Password: <input type="password" id="password"><br><br>
+        <button type="submit" style="background-color: gold;">Submit</button>
+    </form>
+    <hr>
+    <div id="output"></div>
+</body>
+</html>
