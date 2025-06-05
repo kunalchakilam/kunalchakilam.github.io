@@ -47,3 +47,36 @@
     <div id="results"></div> 
 </body>
 </html>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+    <script>
+        function calculate() {
+            var a = Number(num1.value);
+            var b = Number(num2.value);
+
+            var addition = a + " + " + b + " = " + (a + b);
+            var subtraction = a + " - " + b + " = " + (a - b);
+            var multiplication = a + " × " + b + " = " + (a * b);
+            var division = b !== 0 ? (a + " ÷ " + b + " = " + (a / b)) : "Division by zero is not allowed.";
+
+            document.getElementById("results").innerHTML =
+                "<p>" + addition + "</p>" +
+                "<p>" + subtraction + "</p>" +
+                "<p>" + multiplication + "</p>" +
+                "<p>" + division + "</p>";
+        }
+    </script>
+</head>
+<body>
+    <h1>Basic Calculator</h1>
+    <input type="text" id="num1" placeholder="Enter first number">
+    <input type="text" id="num2" placeholder="Enter second number">
+    <button onclick="calculate()" style="background-color: gold;">Calculate</button>
+    <hr>
+    <div id="results"></div>
+</body>
+</html>
