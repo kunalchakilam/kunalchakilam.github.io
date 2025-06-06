@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fruits List with Search</title>
+</head>
+<body>
+  <h1>Fruits List with Search</h1>
+  <h3>Objectives</h3>
+  <ul>
+    <li>Enter the fruit name and click Add to store it.</li>
+    <li>Click Search to show matching fruits using filter method.</li>
+  </ul>
+
+  <input type="text" id="fruitInput" placeholder="Enter fruit name">
+  <button onclick="addFruit()">Add</button>
+  <button onclick="searchFruit()">Search</button>
+
+  <ul id="fruitList"></ul>
+
+  <script>
+    let fruits = [];
+
+    function addFruit() {
+      const input = document.getElementById("fruitInput");
+      const fruit = input.value.trim();
+      if (fruit !== "") {
+        fruits.push(fruit);
+        input.value = "";
+        showFruits(fruits); 
+      }
+    }
+
+    function searchFruit() {
+      const query = document.getElementById("fruitInput").value.trim().toLowerCase();
+      const result = fruits.filter(fruit => fruit.toLowerCase().includes(query));
+      showFruits(result); 
+    }
+
+    function showFruits(list) {
+      document.getElementById("fruitList").innerHTML = list
+        .map(fruit => `<li>${fruit}</li>`)
+        .join("");
+    }
+  </script>
+</body>
+</html>

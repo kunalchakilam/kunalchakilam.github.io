@@ -29,16 +29,18 @@
       }
     }
 
-    function deleteFruit(indexToDelete) {
-      fruits = fruits.filter((_, i) => i !== indexToDelete);
+    function deleteFruit(value) {
+      fruits = fruits.filter(fruit => fruit !== value);
       showFruits();
     }
 
     function showFruits() {
       const list = document.getElementById("fruitList");
-      list.innerHTML = fruits.map((fruit, index) =>
-        `<li>${fruit} <button onclick="deleteFruit(${index})">Delete</button></li>`
-      ).join("");
+      list.innerHTML = fruits
+        .map(fruit =>
+          `<li>${fruit} <button onclick="deleteFruit('${fruit}')">Delete</button></li>`
+        )
+        .join("");
     }
   </script>
 </body>
