@@ -1,63 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-  </head>
-  <body>
+</head>
+<body>
+    <h1>Objects and Arrays</h1>
     <script>
-      // (function add() {
-      //     console.log("Hello")
-      // })(); //Immedieate execution (Ife) method
+        // x=1;
+        // console.log(x);
+        // var x;
 
-      // //add(); without ife method
+        //   function f1() {
+        //     console.log("f1 function");
+        //   }
+        // const f1 = () => {
+        //     console.log("f1 function");
+        // };
+        // f1();
 
-      // const add =10
+        const fruits = ["apple","mango","orange"]
+        // console.log(fruits[0])
+        // fruits.push("banana")
+        // console.log(fruits)
+        // fruits.pop()
+        // console.log(fruits)
+        // console.log(fruits.length)
+        // for(let i=0;i<fruits.length;i++){
+        //     console.log(fruits[i])
+        // }
 
-      // const add = () => {
-      //     console.log("Testing")
-      // };  //Stored a function to variable
-      // add();
+        //Now lets see modern method of printing without using for loop
+        // fruits.forEach(fruit=>console.log(fruit));  //This will print all the values
 
-      // function calc() {
-      //     console.log("Calc Function");
-      // }
+        // const newArr = fruits.map((fruit) => {
+        //     return fruit
+        // }); //For one line inside curly bracket, its not useful, so we write in below method
 
-      // const calc = () => {
-      //     console.log("Calc Function")
-      // }
+        // const newArr = fruits.map((fruit) => fruit);
+        // console.log(newArr); //This loops through each fruit and stores in newArr and prints it.
 
-      // const add = (a,b) => {
-      //     console.log(a+b);
-      // };
-      // add(2,3); //Add fn is called its adding 2  nos and giving result
+        // fruits.map(fruit => console.log(fruit)); //Prints the elements that are mapped
 
-      // const add = (a,b) => {
-      //     return(a+b);
-      // };
-      // let result = add(2,3);
-      // console.log(result) //The fn. is returning some value and used further
+        // const newArr = fruits.filter((fruit) => fruit=="apple"); //.filter returns only if condition matches, return it in newArr
+        // console.log(newArr);
 
-      // const add = (...args) => {
-      //     console.log(args);
-      // };
-      // add(2,3,7,4); //Args used to store arrays and we are printing it
+        // const newArr = fruits.find((fruit) => fruit=="apple"); //.find used when we want to compare unique id, it returns as a string not an array
+        // console.log(newArr);
 
-      // function add(){
-      //     console.log(arguments)
-      // }
-      // add(2,3,7,1);  //Normal traditional writing of functions
+        const score = [4, 2, 1, 6, 7];
+        // score.map((element) => console.log("ID00" + element));
 
-    //   const f1 = () => {
-    //     console.log("f1 function");
-    //   };
-    //   const main = (fn) => {
-    //     fn();
-    //   }; //Callback function
-    //   main(f1); //fn will be same function as f1 bcoz its connecting to f1 function, we are  not calling it directly we are passing f1 to fn and storing it there
-    
-      //Functions are used for actions like click button, etc..
+        // const newArr = score.map((element) => "ID00" + element);
+        // console.log(newArr) //Stores ID's in new array
+
+        // const newArr = score.filter((e) => e > 2);
+        // console.log(newArr); //Filters elements >2 and stores in newArr and prints it, if we use find it return only 1 value
+
+        // const newArr = score.reduce((sum,e) => sum + e); //It returns 1 value that is sum we get by adding all elements in array
+        // console.log(newArr);
+
+        const add = (...args) => {
+            const total = args.reduce((sum,e) => sum + e);
+            return total;
+        }
+        const result = add(4,6,7,9,3)
+        console.log(result);
     </script>
-  </body>
+</body>
 </html>
