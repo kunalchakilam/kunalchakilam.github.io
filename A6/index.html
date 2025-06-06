@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fruits List</title>
+</head>
+<body>
+  <h1>Fruits List</h1>
+  <input type="text" id="fruitInput">
+  <button onclick="addFruit()">Add</button>
+  <ul id="fruitList"></ul>
+
+  <script>
+    const fruits = [];
+
+    function addFruit() {
+      const input = document.getElementById("fruitInput");
+      const fruit = input.value;
+      if (fruit !== "") {
+        fruits.push(fruit);
+        input.value = "";
+        showFruits();
+      }
+    }
+
+    function showFruits() {
+      const list = document.getElementById("fruitList");
+      list.innerHTML = "";
+      for (let i = 0; i < fruits.length; i++) {
+        list.innerHTML += "<li>" + fruits[i] + "</li>";
+      }
+    }
+  </script>
+</body>
+</html>
