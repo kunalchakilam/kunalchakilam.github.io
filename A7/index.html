@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fruits List with Individual Delete</title>
+</head>
+<body>
+  <h1>Fruits List with Deletion</h1>
+  <h3>Objectives</h3>
+  <ul>
+    <li>Enter the fruit name and click Add to display.</li>
+    <li>Click Delete button beside each fruit to remove it.</li>
+  </ul>
+
+  <input type="text" id="fruitInput" placeholder="Enter fruit name">
+  <button onclick="addFruit()">Add</button>
+
+  <ul id="fruitList"></ul>
+
+  <script>
+    let fruits = [];
+
+    function addFruit() {
+      const input = document.getElementById("fruitInput");
+      const fruit = input.value.trim();
+      if (fruit !== "") {
+        fruits.push(fruit);
+        input.value = "";
+        showFruits();
+      }
+    }
+
+    function deleteFruit(indexToDelete) {
+      fruits = fruits.filter((_, i) => i !== indexToDelete);
+      showFruits();
+    }
+
+    function showFruits() {
+      const list = document.getElementById("fruitList");
+      list.innerHTML = fruits.map((fruit, index) =>
+        `<li>${fruit} <button onclick="deleteFruit(${index})">Delete</button></li>`
+      ).join("");
+    }
+  </script>
+</body>
+</html>

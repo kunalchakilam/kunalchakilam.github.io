@@ -6,10 +6,11 @@
 <body>
   <h1>Fruits List</h1>
   <h3>Objectives</h3>
-    <ul>
-        <li>Enter the fruit name in text box and click add.</li>
-        <li>It will print the list of fruits as unordered list below.</li>
-    </ul>
+  <ul>
+    <li>Enter the fruit name in text box and click add.</li>
+    <li>It will print the list of fruits as unordered list below.</li>
+  </ul>
+
   <input type="text" id="fruitInput">
   <button onclick="addFruit()">Add</button>
   <ul id="fruitList"></ul>
@@ -19,19 +20,12 @@
 
     function addFruit() {
       const input = document.getElementById("fruitInput");
-      const fruit = input.value;
+      const fruit = input.value.trim();
       if (fruit !== "") {
         fruits.push(fruit);
         input.value = "";
-        showFruits();
-      }
-    }
-
-    function showFruits() {
-      const list = document.getElementById("fruitList");
-      list.innerHTML = "";
-      for (let i = 0; i < fruits.length; i++) {
-        list.innerHTML += "<li>" + fruits[i] + "</li>";
+        document.getElementById("fruitList").innerHTML = 
+          fruits.map(f => `<li>${f}</li>`).join("");
       }
     }
   </script>
