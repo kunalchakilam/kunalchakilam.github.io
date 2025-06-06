@@ -27,19 +27,19 @@
       if (fruit !== "") {
         fruits.push(fruit);
         input.value = "";
-        showFruits(fruits, true);  // show with delete buttons
+        showFruits(fruits, true); 
       }
     }
 
     function deleteFruit(value) {
       fruits = fruits.filter(fruit => fruit !== value);
-      showFruits(fruits, true);  // update the full list again after deletion
+      showFruits(fruits, true);  
     }
 
     function searchFruit() {
       const query = document.getElementById("fruitInput").value.trim().toLowerCase();
       const result = fruits.filter(fruit => fruit.toLowerCase().includes(query));
-      showFruits(result, false);  // show search result without delete buttons
+      showFruits(result, false); 
     }
 
     function showFruits(list, withDelete) {
