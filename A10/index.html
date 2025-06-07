@@ -1,15 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
   <title>Product Cards</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Olala Patisserie</h1>
-  <div id="product-container" class="card-container"></div>
-  
-  <script src="script.js"></script>
+
+  <h1>Our Products</h1>
+  <div class="container" id="productContainer"></div>
+
+  <script>
+    const products = [
+      {
+        id: 1,
+        name: "Chocolate Cake",
+        description: "Rich chocolate flavor with cream frosting.",
+        price: "₹2500",
+        image: "https://source.unsplash.com/250x160/?chocolate-cake"
+      },
+      {
+        id: 2,
+        name: "Strawberry Tart",
+        description: "Fresh and juicy strawberry tart.",
+        price: "₹580",
+        image: "https://source.unsplash.com/250x160/?strawberry-dessert"
+      },
+      {
+        id: 3,
+        name: "Blueberry Muffin",
+        description: "Soft muffin filled with blueberries.",
+        price: "₹190",
+        image: "https://source.unsplash.com/250x160/?blueberry-muffin"
+      }
+    ];
+
+    const container = document.getElementById("productContainer");
+
+    container.innerHTML = products.map(product => `
+      <div class="card">
+        <img src="${product.image}" alt="${product.name}">
+        <h2>${product.name}</h2>
+        <p>${product.description}</p>
+        <div class="price">${product.price}</div>
+        <button>Add to Cart</button>
+      </div>
+    `).join('');
+  </script>
+
 </body>
 </html>
