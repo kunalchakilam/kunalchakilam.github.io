@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Search</title>
+</head>
+<body>
+  <h2>Search User</h2>
+  <input type="text" id="txtName" placeholder="Enter name" />
+  <button onclick="search()">Search</button>
+  <hr>
+  <div id="dvUser"></div>
+
+  <script>
+    let users = [];
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then(res => res.json())
+      .then(data => users = data);
+
+    function search() {
+      let name = txtName.value;
+      let u = users.find(x => x.name === name);
+      if (u) {
+        dvUser.innerHTML = `
+          <p><b>Name:</b> ${u.name}</p>
+          <p><b>Email:</b> ${u.email}</p>
+          <p><b>Phone:</b> ${u.phone}</p>
+          <p><b>Username:</b> ${u.username}</p>
+          <p><b>Website:</b> ${u.website}</p>
+          <p><b>Company:</b> ${u.company.name}</p>
+          <p><b>Address:</b> ${u.address.street}, ${u.address.city}</p>
+        `;
+      } else {
+        dvUser.innerHTML = "No user found.";
+      }
+    }
+  </script>
+</body>
+</html>
